@@ -1,11 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <variable
+                name="actor"
+                type="muhammadbahaa.actorbox.data.model.actor.Actor"/>
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
                   android:id="@+id/movie"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
@@ -16,7 +20,7 @@
                 android:layout_width="112dp"
                 android:layout_height="168dp"
                 android:layout_gravity="center"/>
-
+        <!--bind:imageUrl="@{actor.profilePath}"-->
         <TextView
                 android:id="@+id/text_view_actor_name"
                 android:layout_width="114dp"
@@ -24,6 +28,7 @@
                 android:layout_marginTop="4dp"
                 android:gravity="center_horizontal"
                 android:textColor="#000000"
+                android:text="@{actor.name}"
                 android:textSize="14sp"/>
 
     </LinearLayout>

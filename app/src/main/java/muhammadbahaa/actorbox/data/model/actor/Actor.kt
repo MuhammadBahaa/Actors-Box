@@ -17,7 +17,7 @@ class Actor {
     var id: Int? = null
     @SerializedName("profile_path")
     @Expose
-    var profilePath: String? = null
+    var profile_path: String? = null
     @SerializedName("name")
     @Expose
     var name: String? = null

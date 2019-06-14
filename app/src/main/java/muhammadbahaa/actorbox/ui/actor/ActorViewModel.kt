@@ -39,13 +39,12 @@ class ActorViewModel : ViewModel() {
                 }
 
                 override fun onSuccess(value: BaseResponse?) {
-                    actors.setValue(value?.actors)
+                    actors.setValue(value?.results)
                 }
 
                 override fun onError(e: Throwable) {
                     Log.e( javaClass.simpleName, e.message)
                 }
             })
-
     }
 }

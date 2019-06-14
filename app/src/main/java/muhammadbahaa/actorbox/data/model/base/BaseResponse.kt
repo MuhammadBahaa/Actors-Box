@@ -19,8 +19,8 @@ class BaseResponse {
     @SerializedName("total_pages")
     @Expose
     var totalPages: Int? = null
-    @SerializedName("actors")
+    @SerializedName("results")
     @Expose
-    var actors: List<Actor>? = null
+    var results: List<Actor>? = null
 
 }

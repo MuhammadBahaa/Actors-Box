@@ -1,12 +1,13 @@
 package muhammadbahaa.actorbox.ui.actor
 
+
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
 import muhammadbahaa.actorbox.R
-
 import muhammadbahaa.actorbox.data.model.actor.Actor
 import muhammadbahaa.actorbox.databinding.ActivityActorBinding
 
@@ -24,14 +25,23 @@ class ActorActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_actor)
 
-        val viewModel = ViewModelProviders.of(this).get(ActorViewModel::class.java!!)
+        val viewModel = ViewModelProviders.of(this).get(ActorViewModel::class.java)
 
         viewModel.getActors().observe(this, Observer<List<Actor>>{ actors ->
-            updateUI()
+            if (actors != null) {
+                updateUI(actors)
+            }
         })
     }
 
-    fun updateUI(){
+    fun updateUI(actors : List<Actor>){
+
+        val layoutManager = GridLayoutManager(this@ActorActivity ,2)
+        val actorsAdapter = ActorAdapter(actors, this@ActorActivity)
+
+        binding?.recyclerView?.setLayoutManager(layoutManager)
+        binding?.recyclerView?.setAdapter(actorsAdapter)
+
 
     }
 

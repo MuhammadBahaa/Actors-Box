@@ -3,13 +3,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
     </data>
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".ui.actor.ActorActivity">
+
 
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView"
@@ -18,6 +18,9 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="40dp" android:layout_marginTop="20dp" android:layout_marginBottom="20dp"
+                android:layout_marginRight="40dp"/>
+
     </android.support.constraint.ConstraintLayout>
 </layout>
