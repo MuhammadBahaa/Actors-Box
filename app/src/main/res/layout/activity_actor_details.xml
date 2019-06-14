@@ -10,7 +10,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginStart="20dp" android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp" android:id="@+id/relative_layout_slider">
 
         <android.support.v4.view.ViewPager
                 android:id="@+id/pager"
@@ -32,5 +32,50 @@
                 app:snap="false" android:layout_marginLeft="10dp"
                 android:layout_marginStart="20dp" android:layout_marginRight="10dp"
                 android:layout_marginEnd="20dp"/>
+
     </RelativeLayout>
+
+    <TextView
+            android:text="Biography"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/text_view_biography_title"
+            android:layout_below="@id/relative_layout_slider" android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp" android:layout_marginStart="5dp" android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp" android:layout_marginBottom="5dp" android:textStyle="bold"
+            android:textSize="14sp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/text_view_biography"
+            android:layout_below="@id/text_view_biography_title" android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp" android:layout_marginStart="5dp" android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp" android:layout_marginBottom="5dp"/>
+    <TextView
+            android:text="Place Of Birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/text_view_place_of_birth_title"
+            android:layout_below="@id/text_view_biography" android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp" android:layout_marginStart="5dp" android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp" android:layout_marginBottom="5dp" android:textStyle="bold"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/text_view_place_of_birth"
+            android:layout_below="@id/text_view_place_of_birth_title" android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp" android:layout_marginStart="5dp" android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp" android:layout_marginBottom="5dp"/>
+    <TextView
+            android:text="Birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/text_view_birthday_title"
+            android:layout_below="@id/text_view_place_of_birth" android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp" android:layout_marginStart="5dp" android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp" android:layout_marginBottom="5dp" android:textStyle="bold"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/text_view_birthday"
+            android:layout_below="@id/text_view_birthday_title" android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp" android:layout_marginStart="5dp" android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp" android:layout_marginBottom="5dp"/>
 </RelativeLayout>
