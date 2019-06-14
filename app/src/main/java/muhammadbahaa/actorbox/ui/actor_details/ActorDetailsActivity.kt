@@ -12,9 +12,9 @@ import muhammadbahaa.actorbox.data.model.actor.ActorProfile
 import muhammadbahaa.actorbox.ui.slider.SlidingImageAdapter
 import java.util.*
 
-
-
-
+/**
+ * Created by muhammadbahaa on 2019-06-14.
+ */
 
 class ActorDetailsActivity : AppCompatActivity() {
 
@@ -41,10 +41,10 @@ class ActorDetailsActivity : AppCompatActivity() {
 
     private fun initViewPager(imageModelArrayList: List<ActorProfile>) {
 
-        mPager = findViewById(muhammadbahaa.actorbox.R.id.pager) as ViewPager
+        mPager = findViewById(R.id.pager) as ViewPager
         mPager!!.adapter = SlidingImageAdapter(this@ActorDetailsActivity, imageModelArrayList!!)
 
-        val indicator = findViewById(muhammadbahaa.actorbox.R.id.indicator) as CirclePageIndicator
+        val indicator = findViewById(R.id.indicator) as CirclePageIndicator
 
         indicator.setViewPager(mPager)
 
@@ -86,6 +86,8 @@ class ActorDetailsActivity : AppCompatActivity() {
 
             }
         })
+
+
 
     }
 

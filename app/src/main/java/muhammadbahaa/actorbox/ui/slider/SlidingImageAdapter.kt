@@ -1,6 +1,7 @@
 package muhammadbahaa.actorbox.ui.slider
 
 import android.content.Context
+import android.content.Intent
 import android.os.Parcelable
 import android.support.v4.view.PagerAdapter
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import muhammadbahaa.actorbox.R
 import muhammadbahaa.actorbox.data.model.actor.ActorProfile
+import muhammadbahaa.actorbox.ui.save_image.SaveImageActivity
 import muhammadbahaa.actorbox.utils.Constants
 /**
  * Created by muhammadbahaa on 2019-06-14.
@@ -42,6 +44,14 @@ class SlidingImageAdapter(private val context: Context, private val imageModelAr
 
 
         view.addView(imageLayout, 0)
+
+        imageView.setOnClickListener {
+            val intent = Intent(context, SaveImageActivity::class.java)
+            if (imageModelArrayList != null) {
+                intent.putExtra("image_path", imageModelArrayList[position].file_path)
+            }
+            context.startActivity(intent)
+        }
 
         return imageLayout
     }

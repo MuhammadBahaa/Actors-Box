@@ -59,7 +59,7 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
 
     //ViewPagerIndicator
-    implementation ('com.github.JakeWharton:ViewPagerIndicator:2.4.1')  {
+    implementation('com.github.JakeWharton:ViewPagerIndicator:2.4.1') {
         exclude group: 'com.android.support'
         exclude module: 'appcompat-v7'
         exclude module: 'support-v4'
