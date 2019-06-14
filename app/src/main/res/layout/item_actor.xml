@@ -1,7 +1,4 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:bind="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
         <variable
@@ -20,7 +17,7 @@
                 android:layout_width="112dp"
                 android:layout_height="168dp"
                 android:layout_gravity="center"/>
-        <!--bind:imageUrl="@{actor.profilePath}"-->
+
         <TextView
                 android:id="@+id/text_view_actor_name"
                 android:layout_width="114dp"

@@ -32,7 +32,7 @@ class ActorViewModel : ViewModel() {
 
         var apiService = ApiClient.provideRetrofitInterface().create(ApiService::class.java)
 
-        apiService.getArticles().subscribeOn(Schedulers.io())
+        apiService.getActors().subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object : SingleObserver<BaseResponse> {
                 override fun onSubscribe(d: Disposable) {

@@ -1,16 +1,18 @@
 package muhammadbahaa.actorbox.ui.actor
 
 import android.content.Context
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
-import muhammadbahaa.actorbox.R
 import muhammadbahaa.actorbox.data.model.actor.Actor
 import muhammadbahaa.actorbox.databinding.ItemActorBinding
+import muhammadbahaa.actorbox.ui.actor_details.ActorDetailsActivity
 import muhammadbahaa.actorbox.utils.Constants
+
 
 
 /**
@@ -26,7 +28,7 @@ class ActorAdapter(private val actorList: List<Actor>?, private val context: Con
 
 
         val binding: ItemActorBinding =
-            DataBindingUtil.inflate(layoutInflater, R.layout.item_actor, parent, false)
+            DataBindingUtil.inflate(layoutInflater, muhammadbahaa.actorbox.R.layout.item_actor, parent, false)
 
         return ActorItemView(binding)
     }
@@ -54,6 +56,11 @@ class ActorAdapter(private val actorList: List<Actor>?, private val context: Con
         }
 
         override fun onClick(p0: View?) {
+            val intent = Intent(context, ActorDetailsActivity::class.java)
+            if (actorList != null) {
+                intent.putExtra("actor_id", actorList.get(adapterPosition).id.toString())
+            }
+            context.startActivity(intent)
         }
     }
 }

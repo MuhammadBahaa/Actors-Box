@@ -16,7 +16,7 @@ class ActorProfile {
     var aspectRatio: Double? = null
     @SerializedName("file_path")
     @Expose
-    var filePath: String? = null
+    var file_path: String? = null
     @SerializedName("height")
     @Expose
     var height: Int? = null
