@@ -27,6 +27,7 @@ class ActorDetailsActivity : AppCompatActivity() {
 
         val viewModel = ViewModelProviders.of(this).get(ActorDetailsViewModel::class.java)
 
+        viewModel.loadActorDetails(id)
         viewModel.loadActorsImages(id)
 
         viewModel.getActorsImages()?.observe(this, object : Observer<List<ActorProfile>> {
