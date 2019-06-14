@@ -2,13 +2,16 @@ package muhammadbahaa.actorbox.ui.actor_details
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import com.viewpagerindicator.CirclePageIndicator
 import muhammadbahaa.actorbox.R
+import muhammadbahaa.actorbox.data.model.actor.ActorDetails
 import muhammadbahaa.actorbox.data.model.actor.ActorProfile
+import muhammadbahaa.actorbox.databinding.ActivityActorDetailsBinding
 import muhammadbahaa.actorbox.ui.slider.SlidingImageAdapter
 import java.util.*
 
@@ -18,9 +21,13 @@ import java.util.*
 
 class ActorDetailsActivity : AppCompatActivity() {
 
+    private var binding: ActivityActorDetailsBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actor_details)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_actor_details)
 
         val intent = intent
         val id = intent.getStringExtra("actor_id")
@@ -37,12 +44,20 @@ class ActorDetailsActivity : AppCompatActivity() {
                 }
             }
         })
+
+        viewModel.getActorDetails()?.observe(this, object : Observer<ActorDetails> {
+            override fun onChanged(actorDetails: ActorDetails?) {
+                if (actorDetails != null) {
+                    binding?.actor = actorDetails
+                }
+            }
+        })
     }
 
 
     private fun initViewPager(imageModelArrayList: List<ActorProfile>) {
 
-        mPager = findViewById(R.id.pager) as ViewPager
+        mPager = binding?.pager as ViewPager
         mPager!!.adapter = SlidingImageAdapter(this@ActorDetailsActivity, imageModelArrayList!!)
 
         val indicator = findViewById(R.id.indicator) as CirclePageIndicator

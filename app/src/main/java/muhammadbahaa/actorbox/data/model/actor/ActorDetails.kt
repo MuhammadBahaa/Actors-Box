@@ -38,7 +38,7 @@ class ActorDetails {
     var popularity: Double? = null
     @SerializedName("place_of_birth")
     @Expose
-    var placeOfBirth: String? = null
+    var place_of_birth: String? = null
     @SerializedName("profile_path")
     @Expose
     var profilePath: String? = null
