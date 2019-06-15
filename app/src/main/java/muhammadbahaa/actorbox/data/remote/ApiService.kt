@@ -6,6 +6,7 @@ import muhammadbahaa.actorbox.data.model.base.BaseResponse
 import muhammadbahaa.actorbox.data.model.base.ImageBaseResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 /**
  * Created by muhammadbahaa on 2019-06-12.
@@ -20,4 +21,8 @@ interface ApiService {
 
     @GET("person/{person_id}")
     fun getActorDetails(@Path("person_id") person_id: String): Single<ActorDetails>
+
+    @GET("search/person")
+    fun getSearchResult(@Query("query") query: String): Single<BaseResponse>
+
 }

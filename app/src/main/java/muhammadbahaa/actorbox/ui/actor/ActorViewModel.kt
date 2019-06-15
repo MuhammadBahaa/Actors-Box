@@ -47,4 +47,24 @@ class ActorViewModel : ViewModel() {
                 }
             })
     }
+
+    fun getSearchReslts(query : String) {
+
+        var apiService = ApiClient.provideRetrofitInterface().create(ApiService::class.java)
+
+        apiService.getSearchResult(query).subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object : SingleObserver<BaseResponse> {
+                override fun onSubscribe(d: Disposable) {
+                }
+
+                override fun onSuccess(value: BaseResponse?) {
+                    actors.setValue(value?.results)
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.e( javaClass.simpleName, e.message)
+                }
+            })
+    }
 }

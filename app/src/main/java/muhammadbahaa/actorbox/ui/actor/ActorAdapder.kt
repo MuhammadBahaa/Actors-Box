@@ -14,7 +14,6 @@ import muhammadbahaa.actorbox.ui.actor_details.ActorDetailsActivity
 import muhammadbahaa.actorbox.utils.Constants
 
 
-
 /**
  * Created by muhammadbahaa on 2019-06-14.
  */
@@ -37,6 +36,7 @@ class ActorAdapter(private val actorList: List<Actor>?, private val context: Con
         val actor = actorList!![position]
         holder.binding.setActor(actor)
         holder.binding.executePendingBindings()
+
         Glide.with(context)
             .load(Constants.Image_BASE_URL + actor.profile_path)
             .into(holder.binding.imageViewActorProfile)
@@ -64,3 +64,5 @@ class ActorAdapter(private val actorList: List<Actor>?, private val context: Con
         }
     }
 }
+
+
